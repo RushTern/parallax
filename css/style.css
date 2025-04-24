@@ -1,0 +1,387 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/poppins-v22-latin-regular.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/poppins-v22-latin-500.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/poppins-v22-latin-600.woff2') format('woff2');
+}
+
+/*Глобальные стили*/ 
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    list-style: none;
+    scroll-behavior: smooth; /* плавность прокрутки */
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #fff;
+    --aqua: #12f7ff;
+    --violet: #1d002c;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--violet);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    padding: 25px 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--white);
+}
+.header__logo:hover{
+    color: var(--aqua);
+    text-shadow: 0 0 1rem var(--aqua);
+}
+.header__menu {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.header__menu a {
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--white);
+    padding: 5px 12px;
+    border-radius: 25px;
+    border: 2px solid var(--aqua);
+    transition: all 0.3s ease;
+}
+
+.header__menu a:hover {
+    color: var(--violet);
+    background: var(--aqua);
+    box-shadow: 0 0 1rem var(--aqua);
+}
+section {
+    min-height: 100vh;
+}
+.home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 99;
+}
+.home img{
+    position: absolute;
+    object-fit: cover;
+    pointer-events: none;
+}
+#text{
+    position: absolute;
+    font-size: 2.5rem;
+    text-shadow: 0 10px 4px rgba(0, 0, 0, 0.85);
+    left: 3%;
+    top: 80%;
+}
+#moon, #desert-moon{
+    mix-blend-mode: screen;
+}
+.about{
+    position: relative;
+}
+.info-box{
+    position: absolute;
+    z-index: 1003;
+    top: 0%;
+    left: 10%;
+    width: 50%;
+    background: var(--violet);
+
+}
+.info-box h2{
+    font-size: 2.3rem;
+}
+.info-box p{
+    margin: 0.5rem 0 1.5rem 0;
+}
+.btn{
+    background: var(--aqua);
+    color: var(--violet);
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--aqua);
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+.btn:hover{
+    box-shadow: 0 0 1rem var(--aqua);
+    background: var(--violet);
+    color: var(--white);
+}
+.about img {
+    position: absolute;
+    z-index: 1000;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+#waterfall {
+    position: absolute;
+    top: -95px;
+}
+
+.products{
+  position: relative;
+  background: #0f1337;
+  padding-top: 10rem;
+  text-align: center;
+  height: 100%;
+}
+
+/* .contact::before{
+
+  position: absolute;
+    content: '';
+    z-index: 100;
+    width: 100%;
+    height: 5vh;
+    bottom: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  background-image: url(../img/contact/leaves.png);
+} */
+
+.products h2{
+  font-size: 2rem;
+}
+
+
+
+.products-fish{
+  display: flex;
+  margin-top: 8rem;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.fish{
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  width: 20%;
+  border: solid 2px var(--aqua);
+  border-radius: 25px;
+  padding: 30px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.fish:hover{
+  position: relative;
+  top: -1rem;
+  box-shadow: 0px 0px 8px 5px var(--aqua);
+  
+}
+
+.name-cost{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 3rem 0 0 0;
+}
+
+.fish__name, .fish__cost{
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+
+.fish__cost{
+  color: var(--aqua);
+}
+
+.fish img{
+  position: absolute;
+  margin-top: -100px;
+  width: 150px;
+  background-size: cover;
+  filter: drop-shadow(0px 0px 5px var(--aqua));
+}
+
+.fish:nth-child(1) img,
+.fish:nth-child(4) img{
+  width: 100px;
+}
+
+.fish .btn{
+  padding: 0.5rem 3.5rem;
+}
+
+
+
+.contact {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 99;
+  /* overflow: hidden; */
+}
+.contact img{
+  position: absolute;
+  object-fit: cover;
+}
+
+#leaves{
+  object-fit: cover;
+  position: absolute;
+  z-index: 10;
+  top: -530px;
+  
+}
+
+#feather{
+  position: absolute;
+  /* left: 50px; */
+  z-index: 101;
+  top: 30px;
+  animation: feather 10s linear infinite;
+  overflow-y: hidden;
+  animation-duration: calc(90s / var(--i));
+}
+
+.contact #feather:nth-child(even){
+  width: 100px;
+}
+
+#train_b, #rail_b{
+  position: absolute;
+  z-index: 1;
+  top: 180px;
+}
+
+#train_b{
+  left: 0;
+  animation: train 5s linear infinite;
+  animation-duration: calc(10s / var(--i));
+}
+
+.contact__info{
+  position: absolute;
+  width: 25vw;
+  height: 15rem;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+
+
+.contact__text{
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(140, 1, 8);
+  border-radius: 20px;
+  border: solid 2px #77031a;
+height: 100%;
+width: 100%;
+transition: all 0.5s;
+}
+
+.contact__info:hover .contact__text{
+  box-shadow: 0px 0px 8px 5px rgba(140, 1, 8);
+}
+
+.contact__info:hover img{
+  filter: drop-shadow(0px 0px 5px rgba(140, 1, 8));
+  top: -250px;
+}
+
+
+.contact__info img{
+  position: absolute;
+  z-index: 99;
+  top: -230px;
+  width: 250px;
+  left: 80px;
+  transition: all 0.s;
+}
+
+.contact__text h2{
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact__text p,
+.contact__text a{
+  font-size: 1.3rem;
+}
+
+@keyframes train {
+  0%{
+      
+  }
+  50%{
+    left: 220vh;
+  }
+  100%{
+    left: -50vh;
+  }
+}
+
+.copyright{
+  margin-top: 2rem;
+  color: #1d002c;
+  font-weight: 900;
+}
+
+@keyframes feather {
+  0%, 100%{
+      transform: translateY(90vh) scale(1) rotate(360deg);
+  }
+  40%{
+      transform: translateY(30vh) scale(0.5);
+  }
+  60%{
+    transform: translateY(40vh) rotateY(200deg);
+  }
+}
